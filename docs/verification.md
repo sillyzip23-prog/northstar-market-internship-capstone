@@ -9,7 +9,8 @@
 - GOV.UK keyboard pass confirmed the focused skip link is visible and Enter moves focus to the main landmark.
 - Lighthouse/PageSpeed results and five prioritized findings are recorded in `docs/accessibility-audit.md`.
 - The first W3C Nu validation found two ARIA errors (an `aria-label` on a generic `<span>` and on a generic `<div>`). Both source issues were corrected. Final validation with Nu Html Checker vnu 26.9.16 reported: “No errors or warnings to show.”
+- Responsive browser screenshots are saved in `docs/screenshots/` at 320, 768, 1024, and 1440 CSS pixels. At each viewport, `documentElement.scrollWidth` and `body.scrollWidth` equaled the viewport width (320, 768, 1024, and 1440 respectively), with no horizontal page overflow.
 
 ## Evidence still to capture
 
-The PageSpeed report URL is retained in the audit worksheet. Local browser screenshots at the four required viewport widths have not been saved as repository files, and a keyboard pass through every storefront interaction remains to be recorded. The CSS has responsive breakpoints for those widths, but those visual checks should be completed before claiming responsive sign-off.
+A keyboard pass through every storefront interaction remains to be recorded. This check was limited to layout overflow and screenshots; it is not a full device, browser, or assistive-technology compatibility sign-off.
