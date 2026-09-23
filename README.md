@@ -14,6 +14,18 @@ docs/                Architecture, audit worksheet, evidence and screenshots
 tests/               Manual acceptance checklist and test scaffolding
 ```
 
+## Architecture
+
+```mermaid
+flowchart LR
+  U[Browser] --> UI[Accessible storefront]
+  UI --> STATE[localStorage: cart, saved items, theme, demo session]
+  UI --> API[REST API client]
+  API -->|same-origin /api/products| SERVER[Node HTTP server]
+  API -. optional live catalog .-> EXT[Fake Store API]
+  SERVER --> MEM[(In-memory catalog)]
+```
+
 ## Boundaries
 
 The client renders the interface, manages filters and user preferences, and calls `/api/products`. `client/js/api.js` owns network and demo fallback behavior. The server exposes a small JSON REST API and owns catalog CRUD. The server stores data in memory, so catalog edits reset when the process restarts. Cart contents and theme preference stay in browser `localStorage`.
@@ -27,6 +39,10 @@ node server/index.js
 ```
 
 Open <http://localhost:3000>. To use the external Fake Store API instead of the local API, visit <http://localhost:3000/?source=external>. The client falls back to bundled demo data if a request fails.
+
+## Deployment
+
+This is a Node web service. Configure a deployment service with build command `npm install`, start command `npm start`, and health check path `/api/health`. The service listens on the host-provided `PORT`. The catalog is in memory and resets when the service restarts; this project is a learning demo, not production commerce software.
 
 ## First vertical slice
 
