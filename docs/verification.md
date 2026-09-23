@@ -10,6 +10,7 @@
 - Lighthouse/PageSpeed results and five prioritized findings are recorded in `docs/accessibility-audit.md`.
 - The first W3C Nu validation found two ARIA errors (an `aria-label` on a generic `<span>` and on a generic `<div>`). Both source issues were corrected. Final validation with Nu Html Checker vnu 26.9.16 reported: “No errors or warnings to show.”
 - Responsive browser screenshots are saved in `docs/screenshots/` at 320, 768, 1024, and 1440 CSS pixels. At each viewport, `documentElement.scrollWidth` and `body.scrollWidth` equaled the viewport width (320, 768, 1024, and 1440 respectively), with no horizontal page overflow.
+- GitHub Actions published the client successfully to GitHub Pages. The live page loaded the storefront and the 20-item Fake Store catalog; URL: <https://sillyzip23-prog.github.io/northstar-market-internship-capstone/>.
 
 ## Evidence still to capture
 

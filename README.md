@@ -44,6 +44,8 @@ Open <http://localhost:3000>. To use the external Fake Store API instead of the 
 
 Pushing to `main` publishes the client to GitHub Pages through `.github/workflows/pages.yml`. On Pages, the catalog loads from Fake Store API and catalog edits persist in that browser's `localStorage`. For full-stack local use, `node server/index.js` serves the client and same-origin REST API. The server's catalog is in memory and resets when it restarts. This is an internship learning demo, not production commerce software.
 
+**Live demo:** <https://sillyzip23-prog.github.io/northstar-market-internship-capstone/>
+
 ## First vertical slice
 
 Load the catalog from the API, show loading and failure states, search/filter/sort products, create/rename/delete inventory through the local CRUD API, add to a persistent cart, and adjust quantities in the cart dialog. The demo sign-in is a localStorage toggle and checkout is a mock button; neither sends credentials or collects payment information.
