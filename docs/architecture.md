@@ -12,11 +12,11 @@ Browser (client)
                            └─ /api/products (GET, POST, PATCH, DELETE)
 ```
 
-The client has no framework or build step, keeping the first slice inspectable and easy to run. `server/index.js` serves the static client and a small JSON API. Catalog records are held in memory for this instructional version. The boundary makes it straightforward to replace the store with a database adapter without moving UI concerns to the server.
+The client has no framework or build step, keeping the first slice inspectable and easy to run. `server/index.js` serves the static client and a small JSON API. Catalog records are held in memory for this instructional version. On GitHub Pages, the client uses Fake Store API for the initial public catalog and keeps inventory edits in browser `localStorage`; the Node API remains available for local full-stack use. The boundary makes it straightforward to replace the store with a database adapter without moving UI concerns to the client.
 
 ## Local setup
 
-Install Node.js 18+, clone the repository, and run `node server/index.js` from the repository root. Visit `http://localhost:3000`. The server binds to `PORT` (default 3000). `DEMO_API=1` switches catalog reads to Fake Store API. Network failure displays a notice and keeps the built-in sample catalog usable.
+Install Node.js 18+, clone the repository, and run `node server/index.js` from the repository root. Visit `http://localhost:3000`. The server binds to `PORT` (default 3000). Adding `?source=external` switches catalog reads to Fake Store API. Network failure displays a notice and keeps the built-in sample catalog usable.
 
 ## First vertical slice and later slices
 

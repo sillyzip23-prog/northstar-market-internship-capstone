@@ -42,7 +42,7 @@ Open <http://localhost:3000>. To use the external Fake Store API instead of the 
 
 ## Deployment
 
-This is a Node web service. Configure a deployment service with build command `npm install`, start command `npm start`, and health check path `/api/health`. The service listens on the host-provided `PORT`. The catalog is in memory and resets when the service restarts; this project is a learning demo, not production commerce software.
+Pushing to `main` publishes the client to GitHub Pages through `.github/workflows/pages.yml`. On Pages, the catalog loads from Fake Store API and catalog edits persist in that browser's `localStorage`. For full-stack local use, `node server/index.js` serves the client and same-origin REST API. The server's catalog is in memory and resets when it restarts. This is an internship learning demo, not production commerce software.
 
 ## First vertical slice
 
